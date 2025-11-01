@@ -1,0 +1,199 @@
+/*
+ * 1. IMPORTAR FUENTE Y LIBRERÍA DE ICONOS
+ */
+
+/* Fuente de Título (Elegante y Cursiva) y Texto (Limpia, Redondeada) */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600;700&display=swap');
+
+
+/*
+ * 2. VARIABLES Y RESET BÁSICO
+ */
+:root {
+    --color-bg: #f0b5cb; /* Fondo Crema Melocotón muy claro */
+    --color-surface: #ffffff; /* Contenedores blancos */
+    --color-text: #4a4a4a; /* Gris topo suave */
+    --color-placeholder: #c9b1b1; /* Rosa grisáceo pálido */
+    --color-accent-primary: #de8eba; /* Rosa Melocotón (Principal) */
+    --color-accent-secondary: #fce38a; /* Amarillo Pastel/Dorado (Secundario/Iconos) */
+    --color-hover: #d85590; /* Un poco más oscuro en hover */
+    --color-border: #f3b3cc; /* Bordes Rosa Pálido */
+    --shadow-soft: 0 5px 15px rgba(255, 182, 185, 0.25); /* Sombra suave con tinte Rosa */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Tipografía Limpia: Quicksand */
+    font-family: 'Quicksand', sans-serif; 
+    line-height: 1.6;
+    padding: 40px;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/*
+ * 3. TIPOGRAFÍA Y ESTRUCTURA GENERAL
+ */
+h1 {
+    font-family: 'Dancing Script', cursive; /* Fuente Cursiva Elegante para títulos */
+    font-size: 3.5em; /* Aumentamos el tamaño para que destaque más */
+    text-align: center;
+    margin-bottom: 35px;
+    color: var(--color-text);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: none; 
+}
+
+/*
+ * 4. ESTILO DEL FORMULARIO DE BÚSQUEDA
+ */
+#formulario-busqueda {
+    background-color: var(--color-surface);
+    padding: 30px;
+    border-radius: 15px; 
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 40px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    border: 1px solid var(--color-border);
+}
+
+#formulario-busqueda div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 140px;
+}
+
+#formulario-busqueda label {
+    font-size: 0.85em;
+    margin-bottom: 8px;
+    color: var(--color-accent-primary); /* Etiqueta en Rosa Melocotón */
+    font-weight: 700;
+}
+
+/* 4.1 Inputs */
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-container input {
+    padding: 12px 12px 12px 45px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    color: var(--color-text);
+    width: 100%;
+}
+
+.input-container input:focus {
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 3px rgba(255, 182, 185, 0.5); /* "Ring" suave y rosado */
+    outline: none;
+    background-color: #ffffff;
+}
+
+.input-container input::placeholder {
+    color: var(--color-placeholder);
+    font-style: italic;
+}
+
+/* 4.2 Iconos dentro de los Inputs */
+.input-container i {
+    position: absolute;
+    left: 15px;
+    color: var(--color-accent-secondary); /* Color Amarillo/Dorado para los iconos */
+    font-size: 1em;
+    pointer-events: none;
+}
+
+/*
+ * 5. ESTILO DEL BOTÓN
+ */
+#formulario-busqueda button {
+    padding: 12px 25px;
+    background-color: var(--color-accent-primary); /* Color Rosa Melocotón */
+    color: var(--color-surface);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px rgba(255, 182, 185, 0.5); /* Sombra 3D suave */
+}
+
+#formulario-busqueda button i {
+    font-size: 1.1em;
+}
+
+#formulario-busqueda button:hover {
+    background-color: var(--color-hover);
+    box-shadow: 0 6px 8px rgba(255, 182, 185, 0.6);
+}
+
+#formulario-busqueda button:active {
+    transform: scale(0.98);
+}
+
+
+/*
+ * 6. ESTILO DEL TABLERO DE LIBROS
+ */
+#tablero {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 30px; 
+    padding-top: 10px;
+}
+
+#tablero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    transition: transform 0.3s;
+    border: 3px solid var(--color-surface); /* Marco sutil blanco */
+}
+
+#tablero img:hover {
+    transform: translateY(-8px) scale(1.03); 
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/*
+ * 7. MEDIA QUERIES (RESPONSIVO)
+ */
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2.8em;
+    }
+    #formulario-busqueda {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #formulario-busqueda button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}

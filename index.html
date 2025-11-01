@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tablero de Libros</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <h1>Mi Tablero de Libros</h1>
+   
+    <div id="formulario-busqueda">
+        <div>
+            <label for="input-titulo">Título:</label>
+            <div class="input-container">
+                <i class="fas fa-book-open"></i> <input type="text" id="input-titulo" placeholder="Cien años de soledad">
+            </div>
+        </div>
+        
+        <div>
+            <label for="input-autor">Autor:</label>
+            <div class="input-container">
+                <i class="fas fa-user-edit"></i> <input type="text" id="input-autor" placeholder="García Márquez">
+            </div>
+        </div>
+        
+        <div>
+            <label for="input-idioma">Idioma (Código):</label>
+            <div class="input-container">
+                <i class="fas fa-language"></i> <input type="text" id="input-idioma" placeholder="spa, eng, fre">
+            </div>
+        </div>
+       
+        <button id="btn-agregar">
+            <i class="fas fa-plus-circle"></i> Agregar
+        </button>
+    </div>
+
+    <div id="tablero">
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
